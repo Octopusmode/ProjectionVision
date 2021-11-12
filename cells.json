@@ -1,0 +1,62 @@
+{
+  "Process0": {
+    "cell_name": "DASH",
+    "plc_IP": "10.18.9.10",
+    "cam_IP": ""
+  },
+  "Process1": {
+    "cell_name": "C/LAMP",
+    "plc_IP": "10.18.9.35",
+    "cam_IP": ""
+  },
+  "Process2": {
+    "cell_name": "CTR FLR",
+    "plc_IP": "10.18.9.18",
+    "cam_IP": ""
+  },
+  "Process3": {
+    "cell_name": "SIDE OTR RH",
+    "plc_IP": "10.18.9.27",
+    "cam_IP": ""
+  },
+  "Process4": {
+    "cell_name": "SIDE OTR LH",
+    "plc_IP": "10.18.9.28",
+    "cam_IP": ""
+  },
+  "Process5": {
+    "cell_name": "SIDE OTR SUB 2",
+    "plc_IP": "10.18.9.29",
+    "cam_IP": ""
+  },
+  "Process6": {
+    "cell_name": "SIDE OTR SUB 1",
+    "plc_IP": "10.18.9.28",
+    "cam_IP": ""
+  },
+  "Process7": {
+    "cell_name": "COWL",
+    "plc_IP": "10.18.9.34",
+    "cam_IP": ""
+  },
+  "Process8": {
+    "cell_name": "FEM",
+    "plc_IP": "10.18.9.36",
+    "cam_IP": ""
+  },
+  "Process9": {
+    "cell_name": "FEM SUB",
+    "plc_IP": "10.18.9.37",
+    "cam_IP": ""
+  },
+  "Process10": {
+    "cell_name": "F/APRON LH",
+    "plc_IP": "10.18.9.21",
+    "cam_IP": ""
+  },
+  "Process11": {
+    "cell_name": "F/APRON RH",
+    "plc_IP": "10.18.9.22",
+    "cam_IP": ""
+  }
+}
