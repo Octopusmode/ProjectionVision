@@ -24,11 +24,11 @@ def controller_task(controller_host, controller_port) :
 
             time_prev = monotonic()
             while True :
-                request_code_new = controller.batchread_wordunits(headdevice="D70", readsize=1)
+                request_code_new = controller.batchread_wordunits(headdevice="D5000", readsize=1)
 
                 if request_code_old != request_code_new :
                     time_cur = round_time(monotonic()) - time_prev
-                    print(f'{round_time(time_cur)} D70 {controller_host} = {request_code_new}')
+                    print(f'{round_time(time_cur)} D5000 {controller_host} = {request_code_new}')
 
                 request_code_old = request_code_new
 
