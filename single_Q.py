@@ -38,6 +38,7 @@ while True:
             if line_values_old != line_values:
                 time_cur = getTime(time()) - time_prev
                 print(f'{getTime(time_cur)} D5000 = {line_values}')
+                pymc3e.randomwrite_bitunits(bit_devices=["B10"], values=[1])
                 '''
                 TODO
                 Если D5000 = код на запрос, то делаем снимок

@@ -1,5 +1,7 @@
 from multiprocessing import Process
 from time import sleep, monotonic
+from PIL import Image
+from pypylon import pylon
 
 import pymcprotocol
 
@@ -9,7 +11,7 @@ controller_addresses = [
 
 
 def round_time(timestamp) :
-    return round(timestamp, 2)
+    return round(timestamp, 9)
 
 
 def controller_task(controller_host, controller_port) :
@@ -22,19 +24,19 @@ def controller_task(controller_host, controller_port) :
             controller.connect(controller_host, controller_port)
             print(f'Connected to {controller_host}:{controller_port}')
 
-            time_prev = monotonic()
             while True :
+                time_prev = monotonic()
                 request_code_new = controller.batchread_wordunits(headdevice="D5000", readsize=1)
 
                 if request_code_old != request_code_new :
                     time_cur = round_time(monotonic()) - time_prev
                     print(f'{round_time(time_cur)} D5000 {controller_host} = {request_code_new}')
-                    controller.batchwrite_wordunits(headdevice="D6000", values=[str(request_code_new)])
+                    controller.randomwrite_bitunits(bit_devices=["B10"], values=[1])
 
                 request_code_old = request_code_new
 
         except Exception as exc :
-            controller.close()
+            controller.close()  # TODO: будет ли ошибка при разрыве соединения?
             print(f'Connection problem: {controller_host}:{controller_port} {exc}')
             sleep(0.5)
 
