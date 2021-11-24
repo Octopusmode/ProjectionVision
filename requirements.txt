@@ -1,0 +1,2 @@
+pymcprotocol~=0.3.0
+pypylon~=1.7.4
