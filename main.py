@@ -29,11 +29,12 @@ def controller_task(controller_host, controller_port) :
                 if request_code_old != request_code_new :
                     time_cur = round_time(monotonic()) - time_prev
                     print(f'{round_time(time_cur)} D5000 {controller_host} = {request_code_new}')
+                    controller.batchwrite_wordunits(headdevice="D6000", values=[int(request_code_new)])
 
                 request_code_old = request_code_new
 
         except Exception as exc :
-            controller.close()  # TODO: будет ли ошибка при разрыве соединения?
+            controller.close()
             print(f'Connection problem: {controller_host}:{controller_port} {exc}')
             sleep(0.5)
 
