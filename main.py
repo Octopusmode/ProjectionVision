@@ -20,6 +20,12 @@ def controller_task(controller_host, controller_port) :
     # controller.setaccessopt(commtype="binary")
 
     while True :
+        try:
+            camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
+        except Exception as exc:
+            print(f'Camera problem: {exc}')
+            pass
+
         try :
             controller.connect(controller_host, controller_port)
             print(f'Connected to {controller_host}:{controller_port}')
