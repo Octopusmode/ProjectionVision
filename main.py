@@ -1,3 +1,4 @@
+#iQ-R
 from multiprocessing import Process
 from time import sleep, monotonic
 
@@ -8,7 +9,8 @@ controller_addresses = [
     ("10.18.9.10", 4999),
     ("10.18.9.36", 4999),
     ("10.18.9.28", 4999),
-    ("10.18.9.29", 4999),
+    ("10.18.9.29", 4999)
+#    ("10.18.8.42", 4999)
 ]
 
 
